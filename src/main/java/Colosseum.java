@@ -97,12 +97,12 @@ public class Colosseum {
      * Sorry. The attack level must be between 1 and 49: 27 <br>
      * Enter your defense level (1-23): 24 <br>
      * Sorry. The defense level must be between 1 and 23: 23
-     *
+     * @param setType .....
      * @return tempPokemon - the Pokemon we built and are going to set our fighting Pokemon to <br>
      * (Look, we can return objects too!)
      */
-    public static Pokemon buildPokemon() {
-        Pokemon returnPokemon = null;
+    public static Pokemon buildPokemon(final String setType) {
+        
         return returnPokemon;
     }
 

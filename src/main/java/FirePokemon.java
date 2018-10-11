@@ -2,6 +2,8 @@
  * Our specialty FirePokemon that inherits from our Pokemon class.
  */
 public class FirePokemon extends Pokemon {
+    /**i just can find the attack level, so i set one.*/
+    final int specialattck = 10;
     /**
      * The value we will be setting our specialty probability to.
      */
@@ -58,7 +60,22 @@ public class FirePokemon extends Pokemon {
      * Implement this.
      */
     public boolean attack(final Pokemon opponent) {
-        return false;
+        Pokemon opp = (Pokemon) opponent;
+        if (opp.attack(opponent)) {
+            return true;
+        } else if (opponent.pokeType == PokemonType.FIRE) {
+            return false;
+        } else if (specialtyProbability <= Math.random()) {
+            return false;
+        } else {
+            System.out.println("executes a specialty attack... FLAME THROWER!!!");
+            opponent.setHitPoints(opponent.getHitPoints() - specialattck);
+            if (opponent.getHitPoints() < 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
 }
